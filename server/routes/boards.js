@@ -7,7 +7,6 @@ router.route('/')
   .get((req, res) => {
     Board.find({}).exec()
     .then((boards) => {
-      console.log('boards: ', boards)
       res.send(boards)
     })
     .catch((err) => res.status(400).send(err))
@@ -20,12 +19,30 @@ router.route('/')
       .catch((err) => res.status(400).send(err)))
 
    .put((req, res) => {
-     console.log('req.body.board.id: ', req.body.board._id)
-     console.log('req.body.board: ', req.body.board)
      Board.findByIdAndUpdate(req.body.board._id, {$set: req.body.board}, {new: true}).exec()
-     .then((updated) => res.send(updated))
+     .then((data) => req.io.emit('action', {
+       type: 'GOT_BOARDS',
+       payload: {data}
+      }))
+     .then((updated) => res.send('ok!\n'))
      .catch((err) => res.status(400).send(err))
    })
+
+  //  .put((req, res) => {
+  //    Board.findByIdAndUpdate(req.body.board._id, {$set: req.body.board}, {new: true}).exec()
+  //    .then((data) => req.io.emit('action', {
+  //      type: 'GOT_BOARDS',
+  //      payload: {data}
+  //     }))
+  //    .then((updated) => res.send('ok!\n'))
+  //    .catch((err) => res.status(400).send(err))
+  //  })
+
+  //  .put((req, res) => {
+  //    Board.findByIdAndUpdate(req.body.board._id, {$set: req.body.board}, {new: true}).exec()
+  //    .then((updated) => res.send(updated))
+  //    .catch((err) => res.status(400).send(err))
+  //  })
 
    router.route('/:id')
    .get((req, res) => {

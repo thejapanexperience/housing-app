@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import moment from 'moment'
-
+import socket from '../socket-init'
 import Store from '../stores/Store';
 import ToAPIActions from '../actions/ToAPIActions';
 
@@ -11,6 +11,7 @@ export default class Data extends Component {
     this.state = {
       boards: Store.getBoards(),
       selectedBoard: Store.getSelectedBoard(),
+      socket
     };
     this._onChange = this._onChange.bind(this);
     this._submitMessage = this._submitMessage.bind(this);
@@ -43,7 +44,8 @@ export default class Data extends Component {
     selectedBoard.messages.unshift(message)
     console.log('messageBody.value: ', messageBody.value)
     console.log('selectedBoard: ', selectedBoard)
-    ToAPIActions.addMessage(selectedBoard)
+    this.state.socket.emit('sendMessage', selectedBoard)
+    // ToAPIActions.addMessage(selectedBoard)
   }
 
   render () {

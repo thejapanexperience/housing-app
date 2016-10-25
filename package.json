@@ -1,16 +1,16 @@
 {
-  "name": "basic-express",
+  "name": "sockets-io-message-board",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Allows a user to analyze thier friends and determine if they should continue the relationship.   Built using Express, React, MySQL, IBM Watson, and Microsoft Cognitive Services.",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server/app.js"
   },
   "engines": {
     "node": "6"
   },
   "keywords": [],
-  "author": "Cade Nichols <cade@codinghouse.co>",
+  "author": "Richard Mands <thejapanexperience@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "apeman-react-album": "^3.0.2",
@@ -67,5 +67,14 @@
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thejapanexperience/mongo-message-board.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thejapanexperience/mongo-message-board/issues"
+  },
+  "homepage": "https://github.com/thejapanexperience/mongo-message-board#readme"
 }

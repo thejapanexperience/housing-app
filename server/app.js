@@ -10,10 +10,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackConfig = require('./webpack.config');
+const http = require('http');
 
 // Mongoose
 const mongoose = require('mongoose')
@@ -24,22 +21,23 @@ mongoose.connect(MONGODB_URI, err => {
 
 // APP DECLARATION
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server)
+
+// SERVER LISTEN
+server.listen(PORT, err => {
+  console.log(err || `Express listening on port ${PORT}`);
+});
 
 // GENERAL MIDDLEWARE
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, '../public')));
 
-// WEBPACK CONFIG
-const compiler = webpack(webpackConfig);
-app.use(webpackHotMiddleware(compiler));
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  noInfo: true,
-  hot: true,
-  path: webpackConfig.output.path
-}));
+// MIDDLEWARE FILES OUTSOURCED
+require('./config/webpack')(app);
+require('./config/socket')(app,io);
 
 // ROUTES
 app.use('/api', require('./routes/api'));
@@ -50,11 +48,8 @@ app.get('/', (req, res) => {
 });
 
 // ALLOW REACT ROUTING
-app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build/index.html'));
-});
+// app.use('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build/index.html'));
+// });
 
-// SERVER LISTEN
-app.listen(PORT, err => {
-  console.log(err || `Express listening on port ${PORT}`);
-});
+module.exports = io

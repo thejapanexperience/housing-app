@@ -1,4 +1,5 @@
 import ServerActions from './actions/ServerActions';
+// import socket from './socket-init'
 import axios from 'axios';
 
 const API = {
@@ -31,12 +32,25 @@ const API = {
     console.log('board: ', board)
     axios.put(`http://localhost:8000/api/boards`,{board})
       .then((res) => {
-        ServerActions.gotBoards(res.data)
+        // ServerActions.gotBoards(res.data)
+        console.log('got response')
       })
       .catch((err) => {
         console.error('SEARCH:', err);
       });
   },
+
+  // addMessage (board) {
+  //   console.log('in API');
+  //   console.log('board: ', board)
+  //   axios.put(`http://localhost:8000/api/boards`,{board})
+  //     .then((res) => {
+  //       ServerActions.gotBoards(res.data)
+  //     })
+  //     .catch((err) => {
+  //       console.error('SEARCH:', err);
+  //     });
+  // },
 
   chooseBoard (board) {
     console.log('in API');
