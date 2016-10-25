@@ -40,7 +40,7 @@ export default class Data extends Component {
       displayTime: moment().format('MMMM Do YYYY, h:mm:ss a'),
       time: Date.now()
     }
-    selectedBoard.messages.push(message)
+    selectedBoard.messages.unshift(message)
     console.log('messageBody.value: ', messageBody.value)
     console.log('selectedBoard: ', selectedBoard)
     ToAPIActions.addMessage(selectedBoard)
@@ -80,12 +80,8 @@ export default class Data extends Component {
           </div>
 
           if (selectedBoard.messages.length > 0){
-            let forwardMessages = selectedBoard.messages
-            let reverseMessages = forwardMessages.sort((a,b) => {
-              return a.time - b.time
-            })
-            console.log('forwardMessages: ', forwardMessages)
-            console.log('reverseMessages: ', reverseMessages)
+            let allMessages = selectedBoard.messages
+
             messages =
             <div className="container">
               <table className="table">
@@ -97,7 +93,7 @@ export default class Data extends Component {
                 </thead>
                 <tbody>
 
-                  {reverseMessages.map((message) => {
+                  {allMessages.map((message) => {
                     return(
                       <tr key={message.time}>
                         <td>{message.displayTime}</td>
