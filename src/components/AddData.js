@@ -1,119 +1,120 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
-import {Link} from 'react-router';
+// import uuid from 'uuid';
+// import { Link } from 'react-router';
 
 import ToAPIActions from '../actions/ToAPIActions';
-import BoardActions from '../actions/BoardActions';
 import Store from '../stores/Store';
 
 export default class AddData extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      boards: false,
-    }
-
+    };
     this._onChange = this._onChange.bind(this);
-    this._submitBoard = this._submitBoard.bind(this);
-    this._chooseBoard = this._chooseBoard.bind(this);
+    this._newClient = this._newClient.bind(this);
+    this._newProperty = this._newProperty.bind(this);
   }
 
-  componentWillMount(){
-    ToAPIActions.getBoards()
-    Store.startListening(this._onChange)
-
+  componentWillMount() {
+    Store.startListening(this._onChange);
   }
 
-  componentWillUnmount(){
-    Store.stopListening(this._onChange)
+  componentWillUnmount() {
+    Store.stopListening(this._onChange);
   }
 
-  _onChange () {
+  _onChange() {
     this.setState({
-      boards: Store.getBoards(),
+
     });
   }
 
-  _submitBoard () {
-    let { boardName, boardDescription, boardImage } = this.refs
-    let board = {
-      name: boardName.value,
-      description: boardDescription.value,
-      image: boardImage.value,
-      messages: []
-    }
-    console.log(board);
-    ToAPIActions.submitBoard(board)
+  _newClient() {
+    const { clientFirstName, clientLastName, clientEmail, clientPhone } = this.refs;
+    const client = {
+      name: {
+        first: clientFirstName.value,
+        last: clientLastName.value,
+      },
+      email: clientEmail.value,
+      phone: clientPhone.value,
+    };
+    ToAPIActions.newClient(client);
   }
 
-  _chooseBoard () {
-    let { boards } = this.state
-    console.log('boards: ', boards)
-    let { boardChoice } = this.refs
-    let boardName = boardChoice.value
-    let selectedBoard
-    console.log('boardChoice: ', boardChoice.value)
-    selectedBoard = boards.filter((board) => {
-      return board.name === boardName
-    })
-    let finalBoard = {
-      name: selectedBoard[0].name,
-      image: selectedBoard[0].image,
-      description: selectedBoard[0].description
-    }
-    console.log('finalBoard: ', finalBoard)
-    ToAPIActions.chooseBoard(finalBoard)
+  _newProperty() {
+    const { propertyName, propertyAddress, propertyRentalPrice } = this.refs;
+    const property = {
+      name: propertyName.value,
+      address: propertyAddress.value,
+      price: propertyRentalPrice.value,
+      available: true,
+    };
+    ToAPIActions.newProperty(property);
   }
 
-
-  render () {
-
-    let { boards } = this.state;
-    let boardDropdown
-    let boardList
-    if (!boards) {
-      console.log('no boards');
-      boardDropdown =
-        <select className="form-control">
-          <option disabled selected value> Choose a board</option>
-        </select>
-    } else {
-      console.log('about to map dropdown')
-      console.log('boards: ', boards)
-      boardList = boards.map(board => {
-        return (
-          <option key={board._id}>{board.name}</option>
-        )
-      })
-      console.log('boardList: ', boardList)
-      boardDropdown =
-        <select ref="boardChoice" className="form-control">
-          <option disabled selected value> Choose a board</option>
-          {boardList}
-        </select>
-      }
-
-
+  render() {
     return (
-      <div className="container">
-        <h1>Choose a board or make a new one</h1>
-        <br/>
-        {boardDropdown}
-        <br/>
-        <Link to='/viewdata'>
-          <button onClick={this._chooseBoard} className="btn">Go To Board</button>
-        </Link>
-        <br/>
-        <br/>
-        <div className="input-group input-group-lg">
-          <span className="input-group-addon addDataSpan" id="sizing-addon1">Name|Description|Image</span>
-          <input ref='boardName'type="text" className="form-control" defaultValue="MrPeanutbutter" aria-describedby="sizing-addon1"/>
-          <input ref='boardDescription'type="text" className="form-control" defaultValue="A cool place to chat about Bojack and pals" aria-describedby="sizing-addon1"/>
-          <input ref='boardImage'type="text" className="form-control" defaultValue="http://cdn0.dailydot.com/cache/0f/99/0f99c5beb826a1cb3c155d700b7b628b.jpg" aria-describedby="sizing-addon1"/>
+      <div className="container text-center">
+        <h1>Add a client</h1>
+        <div className="container">
+          <div className="form-group row">
+            <label htmlFor="example-text-input" className="col-xs-2 col-form-label">First Name</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="text" defaultValue="Richard" ref="clientFirstName" />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="example-search-input" className="col-xs-2 col-form-label">Last Name</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="search" defaultValue="Mands" ref="clientLastName" />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="example-email-input" className="col-xs-2 col-form-label">Email</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="email" defaultValue="thejapanexperience@gmail.com" ref="clientEmail" />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="example-url-input" className="col-xs-2 col-form-label">Phone Number</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="number" defaultValue="01912902903" ref="clientPhone" />
+            </div>
+            <br />
+            <br />
+            <br />
+            <div className="col-xs-12">
+              <button className="btn btn-block" onClick={() => this._newClient()}>Submit Client</button>
+            </div>
+          </div>
         </div>
-        <br/>
-        <button onClick={this._submitBoard} className="btn">Add New Board</button>
+        <hr />
+        <h1>Add a property</h1>
+        <div className="container">
+          <div className="form-group row">
+            <label htmlFor="example-text-input" className="col-xs-2 col-form-label">Property Name</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="text" defaultValue="Number 9" ref="propertyName" />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="example-search-input" className="col-xs-2 col-form-label">Property Address</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="search" defaultValue="Helena Avenue, Whitley Bay, Tyne and Wear" ref="propertyAddress" />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="example-email-input" className="col-xs-2 col-form-label">Monthly Rental Price</label>
+            <div className="col-xs-10">
+              <input className="form-control" type="number" defaultValue="2000" ref="propertyRentalPrice" />
+            </div>
+          </div>
+          <br />
+          <div className="col-xs-12">
+            <button className="btn btn-block" onClick={() => this._newProperty()}>Submit Property</button>
+          </div>
+        </div>
       </div>
     );
   }

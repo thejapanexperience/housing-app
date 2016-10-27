@@ -1,25 +1,25 @@
 import AppDispatcher from '../AppDispatcher';
 
 const ServerActions = {
-  gotBoards (data) {
+  getAllClients(data) {
     AppDispatcher.dispatch({
-      type: 'GOT_BOARDS',
-      payload: {data}
+      type: 'ALL_CLIENTS',
+      payload: { data },
     });
   },
 
-  chooseBoard (data) {
+  getAllProperties(data) {
     AppDispatcher.dispatch({
-      type: 'SELECTED_BOARD',
-      payload: {data}
+      type: 'ALL_PROPERTIES',
+      payload: { data },
     });
   },
 
-  gotSelected (data) {
+  gotDetails(data) {
     AppDispatcher.dispatch({
-      type: 'GOT_SELECTED',
-      payload: {data}
+      type: 'GOT_DETAILS',
+      payload: { data },
     });
   },
-}
+};
 export default ServerActions;

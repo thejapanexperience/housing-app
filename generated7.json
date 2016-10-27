@@ -1,0 +1,302 @@
+[
+  {
+    "name": "#3666",
+    "address": "Lynch Street, Williamson, Michigan, 2712",
+    "price": 1328,
+    "available": true
+  },
+  {
+    "name": "#4353",
+    "address": "Crown Street, Vienna, Puerto Rico, 271",
+    "price": 601,
+    "available": true
+  },
+  {
+    "name": "#5353",
+    "address": "Troy Avenue, Delshire, Alabama, 3214",
+    "price": 773,
+    "available": true
+  },
+  {
+    "name": "#4677",
+    "address": "Harwood Place, Belmont, Idaho, 4673",
+    "price": 1634,
+    "available": true
+  },
+  {
+    "name": "#2650",
+    "address": "Schaefer Street, Alderpoint, Hawaii, 9643",
+    "price": 529,
+    "available": true
+  },
+  {
+    "name": "#8180",
+    "address": "Euclid Avenue, Grenelefe, Palau, 976",
+    "price": 552,
+    "available": true
+  },
+  {
+    "name": "#7382",
+    "address": "Clove Road, Brownlee, Virginia, 2111",
+    "price": 1947,
+    "available": true
+  },
+  {
+    "name": "#4635",
+    "address": "Sutter Avenue, Ticonderoga, New Mexico, 2237",
+    "price": 370,
+    "available": true
+  },
+  {
+    "name": "#1854",
+    "address": "Albee Square, Romeville, Marshall Islands, 8335",
+    "price": 916,
+    "available": true
+  },
+  {
+    "name": "#8750",
+    "address": "Ebony Court, Crayne, Colorado, 9353",
+    "price": 1243,
+    "available": true
+  },
+  {
+    "name": "#4831",
+    "address": "Dakota Place, Ripley, North Dakota, 7423",
+    "price": 780,
+    "available": true
+  },
+  {
+    "name": "#3672",
+    "address": "Greenwood Avenue, Kersey, Indiana, 4307",
+    "price": 807,
+    "available": true
+  },
+  {
+    "name": "#5291",
+    "address": "Johnson Street, Delwood, Illinois, 8528",
+    "price": 1386,
+    "available": true
+  },
+  {
+    "name": "#5191",
+    "address": "Seagate Terrace, Ahwahnee, Oregon, 475",
+    "price": 1741,
+    "available": true
+  },
+  {
+    "name": "#7809",
+    "address": "Schroeders Avenue, Hollins, Nevada, 4545",
+    "price": 1239,
+    "available": true
+  },
+  {
+    "name": "#1951",
+    "address": "Anthony Street, Longbranch, Florida, 6263",
+    "price": 1955,
+    "available": true
+  },
+  {
+    "name": "#4987",
+    "address": "Lincoln Terrace, Sedley, Kentucky, 8232",
+    "price": 728,
+    "available": true
+  },
+  {
+    "name": "#8312",
+    "address": "Reeve Place, Iola, Federated States Of Micronesia, 8824",
+    "price": 1010,
+    "available": true
+  },
+  {
+    "name": "#6060",
+    "address": "Montieth Street, Northchase, New Jersey, 5757",
+    "price": 1943,
+    "available": true
+  },
+  {
+    "name": "#690",
+    "address": "Henry Street, Hackneyville, Oklahoma, 7882",
+    "price": 1461,
+    "available": true
+  },
+  {
+    "name": "#8493",
+    "address": "Elm Place, Goochland, Massachusetts, 1422",
+    "price": 1919,
+    "available": true
+  },
+  {
+    "name": "#9334",
+    "address": "Oriental Court, Coultervillle, Delaware, 3022",
+    "price": 1659,
+    "available": true
+  },
+  {
+    "name": "#4715",
+    "address": "Bath Avenue, Manitou, Vermont, 2731",
+    "price": 647,
+    "available": true
+  },
+  {
+    "name": "#5115",
+    "address": "Belvidere Street, Barronett, New Hampshire, 478",
+    "price": 1603,
+    "available": true
+  },
+  {
+    "name": "#2586",
+    "address": "Dekoven Court, Chaparrito, Wisconsin, 2823",
+    "price": 1092,
+    "available": true
+  },
+  {
+    "name": "#6571",
+    "address": "Karweg Place, Nanafalia, Maryland, 3260",
+    "price": 219,
+    "available": true
+  },
+  {
+    "name": "#1977",
+    "address": "Jewel Street, Kerby, Louisiana, 2588",
+    "price": 967,
+    "available": true
+  },
+  {
+    "name": "#7951",
+    "address": "Shale Street, Lowell, Nebraska, 5795",
+    "price": 1429,
+    "available": true
+  },
+  {
+    "name": "#7360",
+    "address": "Hope Street, Fairforest, Montana, 3405",
+    "price": 1918,
+    "available": true
+  },
+  {
+    "name": "#3096",
+    "address": "Hewes Street, Coral, New York, 7341",
+    "price": 1712,
+    "available": true
+  },
+  {
+    "name": "#1963",
+    "address": "Lawn Court, Needmore, Ohio, 6267",
+    "price": 1913,
+    "available": true
+  },
+  {
+    "name": "#708",
+    "address": "Kimball Street, Disautel, Mississippi, 2903",
+    "price": 994,
+    "available": true
+  },
+  {
+    "name": "#5432",
+    "address": "Fleet Place, Eagletown, Kansas, 7955",
+    "price": 306,
+    "available": true
+  },
+  {
+    "name": "#7885",
+    "address": "Falmouth Street, Interlochen, Pennsylvania, 8461",
+    "price": 1886,
+    "available": true
+  },
+  {
+    "name": "#8310",
+    "address": "Newel Street, Thomasville, Tennessee, 8877",
+    "price": 1995,
+    "available": true
+  },
+  {
+    "name": "#1728",
+    "address": "Highlawn Avenue, Basye, Northern Mariana Islands, 2306",
+    "price": 1266,
+    "available": true
+  },
+  {
+    "name": "#8002",
+    "address": "Hawthorne Street, Heil, Rhode Island, 1877",
+    "price": 1308,
+    "available": true
+  },
+  {
+    "name": "#3121",
+    "address": "Louisiana Avenue, Talpa, Arizona, 8277",
+    "price": 197,
+    "available": true
+  },
+  {
+    "name": "#3582",
+    "address": "Division Place, Wanship, Virgin Islands, 3311",
+    "price": 1919,
+    "available": true
+  },
+  {
+    "name": "#6873",
+    "address": "Jodie Court, Madaket, Arkansas, 1540",
+    "price": 1400,
+    "available": true
+  },
+  {
+    "name": "#7456",
+    "address": "Miami Court, Ruckersville, South Dakota, 8236",
+    "price": 1861,
+    "available": true
+  },
+  {
+    "name": "#3413",
+    "address": "Kensington Walk, Westerville, Guam, 5445",
+    "price": 1894,
+    "available": true
+  },
+  {
+    "name": "#7043",
+    "address": "Canarsie Road, Derwood, American Samoa, 4262",
+    "price": 637,
+    "available": true
+  },
+  {
+    "name": "#5772",
+    "address": "Middleton Street, Grimsley, South Carolina, 8534",
+    "price": 1140,
+    "available": true
+  },
+  {
+    "name": "#659",
+    "address": "Lorimer Street, Sattley, California, 8996",
+    "price": 1075,
+    "available": true
+  },
+  {
+    "name": "#8614",
+    "address": "Pitkin Avenue, Mahtowa, District Of Columbia, 172",
+    "price": 1187,
+    "available": true
+  },
+  {
+    "name": "#4393",
+    "address": "Evans Street, Hillsboro, Georgia, 3914",
+    "price": 486,
+    "available": true
+  },
+  {
+    "name": "#7737",
+    "address": "Beaver Street, Tecolotito, Utah, 1610",
+    "price": 615,
+    "available": true
+  },
+  {
+    "name": "#8186",
+    "address": "Stillwell Place, Statenville, Missouri, 6537",
+    "price": 922,
+    "available": true
+  },
+  {
+    "name": "#7715",
+    "address": "Bergen Place, Golconda, Washington, 2748",
+    "price": 857,
+    "available": true
+  }
+]

@@ -1,13 +1,13 @@
 import API from '../API';
 import AppDispatcher from '../AppDispatcher';
 
-const BoardActions = {
-  chooseBoard (board) {
+const NormalActions = {
+  chooseBoard(board) {
     AppDispatcher.dispatch({
       type: 'SELECTED_BOARD',
-      payload: {board}
+      payload: { board },
     });
   },
 };
 
-export default BoardActions;
+export default NormalActions;

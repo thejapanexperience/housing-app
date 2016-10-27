@@ -1,44 +1,42 @@
-const Board = require('../models/Board')
+const Client = require('../models/Client');
 
-module.exports = function(app, io){
-  io.on('connection', socket => {
+module.exports = function (app, io) {
+  io.on('connection', (socket) => {
+    console.log('connected!');
 
-    console.log('connected!')
+    socket.on('click', (data) => {
+      console.log('data: ', data);
 
-    socket.on('click', data => {
-      console.log('data: ', data)
-
-    socket.emit('action', {
+      socket.emit('action', {
         type: 'NEW_DATA',
         payload: {
-          data: data.num
-        }
-      })
-    })
+          data: data.num,
+        },
+      });
+    });
 
-    socket.on('sendMessage', board => {
-      console.log('board: ', board)
-      console.log('board._id: ', board._id)
-      Board.findByIdAndUpdate(board._id, {$set: board}, {new: true}).exec()
-      .then((data) => socket.emit('action', {
+    socket.on('sendMessage', (board) => {
+      console.log('board: ', board);
+      console.log('board._id: ', board._id);
+      Client.findByIdAndUpdate(board._id, { $set: board }, { new: true }).exec()
+      .then(data => socket.emit('action', {
         type: 'GOT_BOARDS',
-        payload: {data}
-       }))
+        payload: { data },
+      }))
       // .then((updated) => res.send('ok!\n'))
-      .catch((err) => console.log(err))
-    })
+      .catch(err => console.log(err));
+    });
 
 
     socket.on('disconnect', () => {
       console.log('disconnected!');
-    })
-
-  })
+    });
+  });
 
 
   // makes io available in the routes
   app.use((req, res, next) => {
-    req.io = io
-    next()
-  })
-}
+    req.io = io;
+    next();
+  });
+};

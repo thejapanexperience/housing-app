@@ -4,88 +4,143 @@ import axios from 'axios';
 
 const API = {
 
-  getBoards(){
-    axios.get(`http://localhost:8000/api/boards`)
+  getAllClients() {
+    axios.get('http://localhost:8000/api/clients')
     .then((res) => {
-      ServerActions.gotBoards(res.data)
+      ServerActions.getAllClients(res.data);
     })
     .catch((err) => {
-      console.error('SEARCH:', err);
+      console.error('ERROR:', err);
     });
   },
 
-  submitBoard (board) {
-    console.log('in API');
-    console.log('board: ', board)
-    axios.post(`http://localhost:8000/api/boards`,{board})
+  getClientDetails(id) {
+    axios.get(`http://localhost:8000/api/clients/${id}`)
+    .then((res) => {
+      ServerActions.gotDetails(res.data);
+    })
+    .catch((err) => {
+      console.error('ERROR:', err);
+    });
+  },
+
+  getPropertyDetails(id) {
+    axios.get(`http://localhost:8000/api/properties/${id}`)
+    .then((res) => {
+      ServerActions.gotDetails(res.data);
+    })
+    .catch((err) => {
+      console.error('ERROR:', err);
+    });
+  },
+
+  getAllProperties() {
+    axios.get('http://localhost:8000/api/properties')
+    .then((res) => {
+      ServerActions.getAllProperties(res.data);
+    })
+    .catch((err) => {
+      console.error('ERROR:', err);
+    });
+  },
+
+  newClient(client) {
+    axios.post('http://localhost:8000/api/clients', { client })
       .then((res) => {
-        console.log('res.data: ', res.data)
-        ServerActions.gotBoards(res.data)
+        ServerActions.getAllClients(res.data);
       })
       .catch((err) => {
-        console.error('SEARCH:', err);
+        console.error('ERROR:', err);
       });
   },
 
-  addMessage (board) {
-    console.log('in API');
-    console.log('board: ', board)
-    axios.put(`http://localhost:8000/api/boards`,{board})
+  newProperty(property) {
+    axios.post('http://localhost:8000/api/properties', { property })
       .then((res) => {
-        // ServerActions.gotBoards(res.data)
-        console.log('got response')
+        ServerActions.getAllProperties(res.data);
       })
       .catch((err) => {
-        console.error('SEARCH:', err);
+        console.error('ERROR:', err);
       });
   },
 
-  // addMessage (board) {
-  //   console.log('in API');
-  //   console.log('board: ', board)
-  //   axios.put(`http://localhost:8000/api/boards`,{board})
-  //     .then((res) => {
-  //       ServerActions.gotBoards(res.data)
-  //     })
-  //     .catch((err) => {
-  //       console.error('SEARCH:', err);
-  //     });
-  // },
-
-  chooseBoard (board) {
-    console.log('in API');
-    console.log('board: ', board)
-    axios.post(`http://localhost:8000/api/chosenboards`,{board})
+  editClient(client) {
+    axios.put('http://localhost:8000/api/clients', { client })
       .then((res) => {
-        console.log('in API chooseBoard after call');
-        console.log('res.data: ', res.data)
-        // ServerActions.gotSelected(res.data)
+        ServerActions.getAllClients(res.data);
+        axios.get('http://localhost:8000/api/properties')
+      .then((res) => {
+        ServerActions.getAllProperties(res.data);
       })
       .catch((err) => {
-        console.error('SEARCH:', err);
+        console.error('ERROR:', err);
+      });
       });
   },
 
-  getSelectedBoard () {
-    console.log('in API get SelectedBoard');
-    axios.get(`http://localhost:8000/api/chosenboards`)
+  editClientProperty(client, propertyId) {
+    if (client.propertys) {
+      console.log('add property to client');
+      axios.put('http://localhost:8000/api/clients/addproperty', { client, propertyId })
       .then((res) => {
-        console.log('res: ', res)
-        let index = res.data.length - 1
-        console.log('index: ', index)
-        let board = res.data[index]
-        console.log('board: ', board)
-        return axios.get(`http://localhost:8000/api/boards/${board.name}`)
-      })
+        ServerActions.getAllClients(res.data);
+        return axios.get('http://localhost:8000/api/properties')
+        .then((res) => {
+          ServerActions.getAllProperties(res.data);
+        })
+        .catch((err) => {
+          console.error('ERROR:', err);
+        });
+      });
+    } else {
+      console.log('remove property from client');
+      axios.put('http://localhost:8000/api/clients/removeproperty', { client, propertyId })
       .then((res) => {
-        console.log('in API getSelectedBoard after call');
-        ServerActions.gotSelected(res.data)
+        ServerActions.getAllClients(res.data);
+        return axios.get('http://localhost:8000/api/properties')
+        .then((res) => {
+          ServerActions.getAllProperties(res.data);
+        })
+        .catch((err) => {
+          console.error('ERROR:', err);
+        });
+      });
+    }
+    client.propertyId = propertyId;
+    console.log('client: ', client);
+  },
+
+  editProperty(id) {
+    axios.put(`http://localhost:8000/api/properties/${id}`)
+      .then((res) => {
+        ServerActions.getAllProperties(res.data);
       })
       .catch((err) => {
-        console.error('SEARCH:', err);
+        console.error('ERROR:', err);
       });
   },
 
-}
+  deleteClient(id) {
+    axios.delete(`http://localhost:8000/api/clients/${id}`)
+      .then((res) => {
+        ServerActions.getAllClients(res.data);
+      })
+      .catch((err) => {
+        console.error('ERROR:', err);
+      });
+  },
+
+  deleteProperty(id) {
+    axios.delete(`http://localhost:8000/api/properties/${id}`)
+      .then((res) => {
+        ServerActions.getAllProperties(res.data);
+      })
+      .catch((err) => {
+        console.error('ERROR:', err);
+      });
+  },
+
+
+};
 
 export default API;

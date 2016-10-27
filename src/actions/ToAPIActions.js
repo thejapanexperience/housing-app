@@ -1,12 +1,17 @@
 import API from '../API';
-import AppDispatcher from '../AppDispatcher';
+// import AppDispatcher from '../AppDispatcher';
 
 const ToAPIActions = {
-  submitBoard: API.submitBoard,
-  getBoards: API.getBoards,
-  chooseBoard: API.chooseBoard,
-  getSelectedBoard: API.getSelectedBoard,
-  addMessage: API.addMessage,
+  newClient: API.newClient,
+  newProperty: API.newProperty,
+  getAllClients: API.getAllClients,
+  getAllProperties: API.getAllProperties,
+  editClientProperty: API.editClientProperty,
+  editProperty: API.editProperty,
+  deleteClient: API.deleteClient,
+  deleteProperty: API.deleteProperty,
+  getClientDetails: API.getClientDetails,
+  getPropertyDetails: API.getPropertyDetails,
 };
 
 export default ToAPIActions;

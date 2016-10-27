@@ -1,0 +1,302 @@
+[
+  {
+    "name": "#8318",
+    "address": "Varet Street, Wawona, Texas, 9499",
+    "price": "$325",
+    "available": true
+  },
+  {
+    "name": "#5001",
+    "address": "Butler Street, Brutus, New Jersey, 5925",
+    "price": "$352",
+    "available": true
+  },
+  {
+    "name": "#2243",
+    "address": "Rockwell Place, Chloride, Pennsylvania, 2200",
+    "price": "$624",
+    "available": true
+  },
+  {
+    "name": "#2648",
+    "address": "Beacon Court, Homeland, Michigan, 8653",
+    "price": "$609",
+    "available": true
+  },
+  {
+    "name": "#1221",
+    "address": "Buffalo Avenue, Rodanthe, New Mexico, 8261",
+    "price": "$988",
+    "available": true
+  },
+  {
+    "name": "#4875",
+    "address": "Farragut Road, Olney, Virgin Islands, 5753",
+    "price": "$584",
+    "available": true
+  },
+  {
+    "name": "#2784",
+    "address": "School Lane, Boykin, Massachusetts, 4199",
+    "price": "$355",
+    "available": true
+  },
+  {
+    "name": "#4986",
+    "address": "Stryker Street, Joes, Tennessee, 3324",
+    "price": "$562",
+    "available": true
+  },
+  {
+    "name": "#2067",
+    "address": "Middagh Street, Remington, American Samoa, 1623",
+    "price": "$155",
+    "available": true
+  },
+  {
+    "name": "#2790",
+    "address": "Melrose Street, Trexlertown, Hawaii, 3568",
+    "price": "$270",
+    "available": true
+  },
+  {
+    "name": "#6685",
+    "address": "Glenwood Road, Crumpler, Florida, 7678",
+    "price": "$703",
+    "available": true
+  },
+  {
+    "name": "#7214",
+    "address": "Preston Court, Camptown, West Virginia, 6642",
+    "price": "$661",
+    "available": true
+  },
+  {
+    "name": "#8749",
+    "address": "Chapel Street, Dargan, District Of Columbia, 9814",
+    "price": "$311",
+    "available": true
+  },
+  {
+    "name": "#7168",
+    "address": "Woodpoint Road, Sexton, Virginia, 6966",
+    "price": "$274",
+    "available": true
+  },
+  {
+    "name": "#4167",
+    "address": "Orange Street, Wollochet, Illinois, 9048",
+    "price": "$725",
+    "available": true
+  },
+  {
+    "name": "#127",
+    "address": "Langham Street, Corinne, Federated States Of Micronesia, 2962",
+    "price": "$193",
+    "available": true
+  },
+  {
+    "name": "#9075",
+    "address": "Lacon Court, Walland, Missouri, 6490",
+    "price": "$642",
+    "available": true
+  },
+  {
+    "name": "#8299",
+    "address": "Seigel Street, Chapin, Oklahoma, 5259",
+    "price": "$890",
+    "available": true
+  },
+  {
+    "name": "#4653",
+    "address": "Ralph Avenue, Siglerville, Connecticut, 4325",
+    "price": "$267",
+    "available": true
+  },
+  {
+    "name": "#6147",
+    "address": "Vandervoort Place, Wescosville, Alabama, 6813",
+    "price": "$927",
+    "available": true
+  },
+  {
+    "name": "#7119",
+    "address": "Madison Street, Sperryville, New York, 908",
+    "price": "$566",
+    "available": true
+  },
+  {
+    "name": "#9016",
+    "address": "Anthony Street, Roland, Nevada, 4417",
+    "price": "$515",
+    "available": true
+  },
+  {
+    "name": "#6620",
+    "address": "Noel Avenue, Lookingglass, Palau, 1499",
+    "price": "$190",
+    "available": true
+  },
+  {
+    "name": "#7873",
+    "address": "Garden Place, Sandston, Guam, 5927",
+    "price": "$897",
+    "available": true
+  },
+  {
+    "name": "#3059",
+    "address": "Lott Avenue, Rosine, Indiana, 8029",
+    "price": "$965",
+    "available": true
+  },
+  {
+    "name": "#7604",
+    "address": "Ash Street, Robinette, Ohio, 8832",
+    "price": "$217",
+    "available": true
+  },
+  {
+    "name": "#1277",
+    "address": "Hopkins Street, Emison, South Carolina, 718",
+    "price": "$239",
+    "available": true
+  },
+  {
+    "name": "#7567",
+    "address": "Kiely Place, Chestnut, Vermont, 8742",
+    "price": "$225",
+    "available": true
+  },
+  {
+    "name": "#7038",
+    "address": "Garland Court, Tetherow, Nebraska, 498",
+    "price": "$291",
+    "available": true
+  },
+  {
+    "name": "#1151",
+    "address": "Barbey Street, Mooresburg, Washington, 8712",
+    "price": "$126",
+    "available": true
+  },
+  {
+    "name": "#1623",
+    "address": "Tapscott Avenue, Elfrida, Delaware, 7100",
+    "price": "$872",
+    "available": true
+  },
+  {
+    "name": "#8306",
+    "address": "Johnson Avenue, Grandview, Utah, 6323",
+    "price": "$934",
+    "available": true
+  },
+  {
+    "name": "#2480",
+    "address": "Temple Court, Sena, North Dakota, 400",
+    "price": "$164",
+    "available": true
+  },
+  {
+    "name": "#9847",
+    "address": "Bergen Street, Freeburn, North Carolina, 8711",
+    "price": "$970",
+    "available": true
+  },
+  {
+    "name": "#9136",
+    "address": "Beard Street, Tyhee, California, 2150",
+    "price": "$673",
+    "available": true
+  },
+  {
+    "name": "#5482",
+    "address": "Riverdale Avenue, Valle, Wisconsin, 1911",
+    "price": "$426",
+    "available": true
+  },
+  {
+    "name": "#6725",
+    "address": "Walker Court, Cochranville, Arizona, 1708",
+    "price": "$461",
+    "available": true
+  },
+  {
+    "name": "#9510",
+    "address": "Desmond Court, Loretto, Maryland, 2851",
+    "price": "$520",
+    "available": true
+  },
+  {
+    "name": "#4790",
+    "address": "Folsom Place, Chical, Northern Mariana Islands, 7865",
+    "price": "$281",
+    "available": true
+  },
+  {
+    "name": "#2813",
+    "address": "Stone Avenue, Welch, Mississippi, 8382",
+    "price": "$555",
+    "available": true
+  },
+  {
+    "name": "#5244",
+    "address": "Ferris Street, Salunga, South Dakota, 9948",
+    "price": "$259",
+    "available": true
+  },
+  {
+    "name": "#9474",
+    "address": "Portland Avenue, Staples, Alaska, 9125",
+    "price": "$733",
+    "available": true
+  },
+  {
+    "name": "#3662",
+    "address": "Crosby Avenue, Hiko, Arkansas, 1080",
+    "price": "$293",
+    "available": true
+  },
+  {
+    "name": "#3842",
+    "address": "Metropolitan Avenue, Jacksonburg, Marshall Islands, 7952",
+    "price": "$187",
+    "available": true
+  },
+  {
+    "name": "#7999",
+    "address": "Bedford Place, Bartley, Wyoming, 9893",
+    "price": "$736",
+    "available": true
+  },
+  {
+    "name": "#3319",
+    "address": "Wortman Avenue, Healy, Oregon, 3897",
+    "price": "$692",
+    "available": true
+  },
+  {
+    "name": "#9120",
+    "address": "Brigham Street, Greenwich, Louisiana, 8833",
+    "price": "$137",
+    "available": true
+  },
+  {
+    "name": "#6134",
+    "address": "Celeste Court, Golconda, Puerto Rico, 7653",
+    "price": "$129",
+    "available": true
+  },
+  {
+    "name": "#9392",
+    "address": "Cranberry Street, Ladera, Idaho, 9592",
+    "price": "$836",
+    "available": true
+  },
+  {
+    "name": "#792",
+    "address": "Roder Avenue, Freelandville, Maine, 1834",
+    "price": "$622",
+    "available": true
+  }
+]
