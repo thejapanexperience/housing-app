@@ -72,10 +72,10 @@ export default class Data1 extends Component {
     } else {
       console.log('properties: ', properties);
       propertyDropdown =
-      (<select className="form-control">
+      (<select className="form-control" ref="propertyId">
         {properties.map((property) => {
           return (
-            <option key={property._id} ref="propertyId" value={property._id}>
+            <option key={property._id} value={property._id}>
               {property.name} {property.address}. Rental Price: ${property.price}
             </option>
           );

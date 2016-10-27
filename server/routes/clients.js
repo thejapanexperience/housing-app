@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const Client = require('../models/Client');
@@ -65,7 +66,7 @@ router.route('/:id')
      console.log('req.params.id: ', req.params.id);
      Client.findByIdAndRemove(req.params.id)
      .then(client => Client.find({}))
-     // .populate('propertys')
+    //  .populate('propertys')
      .then(allClients => res.send(allClients))
      .catch(err => res.status(400).send(err));
    });

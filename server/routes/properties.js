@@ -39,10 +39,10 @@ router.route('/:id')
      .delete((req, res) => {
        Property.findByIdAndRemove(req.params.id)
        .then(property => Client.findWithPropertyId(req.params.id))
-      //  .then((client) => {
-      //    console.log('client1: ', client);
-      //    return Client.findByIdAndUpdate(client[0]._id, { $set: { propertys: null } }, { new: true });
-      //  })
+       .then((client) => {
+         console.log('client1: ', client);
+         return Client.findByIdAndUpdate(client[0]._id, { $set: { propertys: null } }, { new: true });
+       })
        .then((client) => {
          console.log('client2', client);
          return Property.find({});
